@@ -14,8 +14,10 @@ const db = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   ssl: {
-    rejectUnauthorized: false, // Memastikan koneksi aman menggunakan certificate bawaan node
-    // ca: process.env.DB_CA_CERT ? process.env.DB_CA_CERT.replace(/\\n/g, '\n') : undefined,
+    rejectUnauthorized: true, // Memastikan koneksi aman menggunakan certificate bawaan node
+    ca: process.env.DB_CA_CERT
+      ? Buffer.from(process.env.DB_CA_CERT, "base64").toString("utf-8")
+      : undefined,
   },
 });
 
