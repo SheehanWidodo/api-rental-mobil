@@ -1,0 +1,14 @@
+# Mengabaikan semua library/dependencies yang ukurannya giga-giga
+node_modules/
+
+# Mengabaikan file rahasia lokal (biar password database abang gak bocor ke publik)
+.env
+.env.local
+
+# Mengabaikan file log eror
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mengabaikan folder build vercel lokal jika ada
+.vercel
